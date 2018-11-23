@@ -1,0 +1,14 @@
+$(document).ready(function() {
+//  var stockEmail = $("<%= j (render "email") %>");
+//  $("#object-" + <%= @email.id %>).append(stockEmail);
+  if ($("#body-" + <%= @email.id %>).is(':hidden') === true) {
+    $("#body-" + <%= @email.id %>).show();
+    $("#object-" + <%= @email.id %>).css("font-size", "30px");
+    $("#destroy_email-" + <%= @email.id %>).show();
+  }
+  else {
+    $("#body-" + <%= @email.id %>).hide();
+    $("#object-" + <%= @email.id %>).css("font-size", "16px");
+    $("#destroy_email-" + <%= @email.id %>).hide();
+  }
+});

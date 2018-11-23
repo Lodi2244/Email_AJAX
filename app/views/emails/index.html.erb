@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>Inbox</h1>
+<br />
+
+<% @emails.each do |email|%>
+<div class="card-form btn btn light-gray">
+<div class="email btn btn dark-bg" id="email-<%= email.id.to_s %>">
+  <div class="object btn btn bg" id="object-<%= email.id.to_s %>">
+    <%= link_to email.object, "emails/#{email.id}", remote: true, action: :show %>
+  </div>
+<div class="body card-body btn btn dark-bg" id="body-<%= email.id.to_s %>">
+  <%= email.body %>
+  <br>
+  <%= link_to "Delete", "emails/#{email.id}", remote: true, method: :delete, data: {confirm: 'Are you sure ?'}, class: 'btn btn bg' %>
+  </div>
+</div>
+</div>
+  <br />
+<% end %>
